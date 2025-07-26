@@ -1,0 +1,35 @@
+# kubernetes/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iris-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: iris-api
+  template:
+    metadata:
+      labels:
+        app: iris-api
+    spec:
+      containers:
+      - name: iris-api-container
+        image: __IMAGE_URL__  # This is a placeholder filled in by the workflow
+        ports:
+        - containerPort: 8000
+        # No environment variables are needed anymore
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iris-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: iris-api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
