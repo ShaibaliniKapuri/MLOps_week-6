@@ -28,4 +28,4 @@ EXPOSE 8100
 # It starts the Uvicorn server to run our FastAPI application.
 # "iris_fastapi:app" means "in the file iris_fastapi.py, run the object named app".
 # --host "0.0.0.0" makes the server accessible from outside the container.
-CMD ["uvicorn", "iris_fastapi:app", "--host", "0.0.0.0", "--port", "8200"]
+CMD ["uvicorn", "iris_fastapi:app", "--host", "0.0.0.0", "--port", "8100"]
