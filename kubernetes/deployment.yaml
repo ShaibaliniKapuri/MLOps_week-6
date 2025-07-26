@@ -18,7 +18,7 @@ spec:
       - name: iris-api-container
         image: __IMAGE_URL__  # This is a placeholder filled in by the workflow
         ports:
-        - containerPort: 8000
+        - containerPort: 8100
         # No environment variables are needed anymore
 ---
 apiVersion: v1
@@ -32,4 +32,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8000
+    targetPort: 8100
