@@ -57,6 +57,9 @@ jobs:
       run: |
         kubectl apply -f kubernetes/deployment.yaml
         kubectl rollout status deployment/${{ env.DEPLOYMENT_NAME }}
+
+    - name: Set up CML
+      uses: iterative/setup-cml@v2
         
     - name: CML Report
       run: |
